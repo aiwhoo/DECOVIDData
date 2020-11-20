@@ -1,0 +1,16 @@
+*Task 2: Download data or Scrape
+Delaware COVID-19 Dashboard
+1. See state dashboard: https://coronavirus.delaware.gov/
+2. See more data:
+https://myhealthycommunity.dhss.delaware.gov/locations/state
+3. Get Zipcode specific data:Example
+https://myhealthycommunity.dhss.delaware.gov/locations/zip-code-19734
+Deliverable:
+1) Write a python script to download all zipcode data in DE.
+2) Write another python script to validate that all zipcode data is downloaded
+3) Provide a structured zipped directory of as much data as possible (preferably
+programmatically generated)
+
+The first step is to inventory the Delaware covid dashboard 
+for what data can be downloaded into a csv. 
+The second step may be to write a script to download the csv files. 
