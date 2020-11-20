@@ -2,4 +2,4 @@
 
 Requirements:
 
-download-data.py: pip install requests
+pip install requests
