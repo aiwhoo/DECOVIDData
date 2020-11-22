@@ -2,12 +2,13 @@ from time import sleep
 import requests
 from datetime import datetime
 import os
+from data_validate import return_good_zips
+from data_validate import get_url
 
 DEBUG = True
 
 # A list of DE ZIP codes from data-validate.py
-ZIP_CODES_DE = ['19701', '19702', '19703', '19706', '19707', '19709', '19710', '19711', '19713', '19716', '19717', '19720', '19730', '19731', '19732', '19733', '19734', '19735', '19736', '19801', '19802', '19803', '19804', '19805', '19806', '19807', '19808', '19809', '19810', '19901', '19902', '19904', '19930',
-                '19931', '19933', '19934', '19936', '19938', '19939', '19940', '19941', '19943', '19944', '19945', '19946', '19947', '19950', '19951', '19952', '19953', '19954', '19955', '19956', '19958', '19960', '19962', '19963', '19964', '19966', '19967', '19968', '19970', '19971', '19973', '19975', '19977', '19979']
+ZIP_CODES_DE = return_good_zips()
 
 
 def get_per_zip_data():
@@ -64,26 +65,12 @@ def get_all_de_data():
 
 def get_path():
     """
-    Given a path, returns the proper OS independent relative path.
+    Returns the proper OS independent relative path.
     """
     current_folder = os.path.dirname(os.path.abspath(__file__))
     if DEBUG:
         print('Current folder: ' + current_folder)
     return current_folder
-
-
-def get_url(url):
-    """
-    Given a URL, attempts to return the data from it.
-    """
-    value = ''
-    try:
-        print('Getting the URL ' + url)
-        value = requests.get(url)
-    except Exception as e:
-        print('Error in get_url for ' + url)
-        print(e)
-    return value
 
 
 def get_datetime():
